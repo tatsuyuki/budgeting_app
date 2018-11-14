@@ -1,9 +1,9 @@
 class AccountData {
   String name;
-  String type;
+  double balance;
 
-  AccountData(String name, String type) {
+  AccountData(String name, double balance) {
     this.name = name;
-    this.type = type;
+    this.balance = balance;
   }
 }

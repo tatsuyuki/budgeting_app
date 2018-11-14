@@ -11,29 +11,25 @@ class AccountItem extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      decoration: BoxDecoration(
-        border: Border.all(width: 1.0, color: Colors.black),
-      ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5.0),
+        padding: const EdgeInsets.symmetric(vertical: 1.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(width: 1.0, color: Colors.black),
-              ),
-              child: Text(account.name),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(width: 1.0, color: Colors.black),
-              ),
-              child: Text(account.type),
+            RaisedButton(
+              child: Text('Account: ${account.name}, Balance: ${account.balance.toString()}'),
+              color: Theme.of(context).accentColor,
+              elevation: 4.0,
+              splashColor: Colors.blueGrey,
+              onPressed: () {
+                //button press implementation
+              },
             )
           ],
         ),
       ),
+      margin: new EdgeInsets.all(5.0),
+
     );
   }
 }

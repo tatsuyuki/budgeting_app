@@ -6,8 +6,7 @@ import 'package:budgetting_app/widgets/widgets.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final AccountData account = new AccountData('Salary', 'Income');
-  final AccountData account2 = new AccountData('Entertainment', 'Expenses');
+
 
 
 
