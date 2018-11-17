@@ -1,6 +1,6 @@
-import 'package:budgetting_app/widgets/widgets.dart';
-import 'package:budgetting_app/model/models.dart';
-import 'package:budgetting_app/database/DBHelper.dart';
+import 'package:budgeting_app/widgets/widgets.dart';
+import 'package:budgeting_app/model/models.dart';
+import 'package:budgeting_app/database/DBHelper.dart';
 
 import 'package:flutter/material.dart';
 
@@ -22,7 +22,14 @@ class AccountScreen extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
-            child: FutureTotalBalance(),
+            child: new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Total Balance: '),
+                FutureTotalBalance(),
+              ],
+            )
+
           ),
           Flexible(
             fit: FlexFit.loose,

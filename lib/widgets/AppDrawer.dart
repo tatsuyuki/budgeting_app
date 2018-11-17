@@ -1,4 +1,4 @@
-import 'package:budgetting_app/widgets/widgets.dart';
+import 'package:budgeting_app/widgets/widgets.dart';
 
 import 'package:flutter/material.dart';
 

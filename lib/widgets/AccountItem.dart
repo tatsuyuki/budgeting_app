@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:budgetting_app/model/AccountData.dart';
+import 'package:budgeting_app/model/AccountData.dart';
 
 class AccountItem extends StatelessWidget {
   final AccountData account;

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:budgetting_app/screens/AccountScreen.dart';
-import 'package:budgetting_app/Dialog/AddAccountDialog.dart';
+import 'package:budgeting_app/screens/Screens.dart';
+import 'package:budgeting_app/dialog/Dialogs.dart';
 
 class DrawerItem extends StatelessWidget {
   final String accountHeading = 'Accounts';
   final String categoryHeading = 'Category';
+  final String subCategoryHeading = 'Subcategory';
 
   final List<Color> colorList = new List();
 
@@ -22,7 +23,7 @@ class DrawerItem extends StatelessWidget {
       padding: EdgeInsets.zero,
       children: <Widget>[
         DrawerHeader(
-          child: Text('Budgetting App'),
+          child: Text('Budgeting App'),
           decoration: BoxDecoration(
               gradient: SweepGradient(colors: colorList)
           ),
@@ -33,6 +34,7 @@ class DrawerItem extends StatelessWidget {
             ListTile(
               title: Text('Create Account'),
               onTap: () {
+                Navigator.pop(context);
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => AddAccountDialog(),
@@ -44,10 +46,12 @@ class DrawerItem extends StatelessWidget {
             ListTile(
               title: Text('List Accounts'),
               onTap: () {
+                Navigator.pop(context);
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => AccountScreen()),
                 );
+                
               },
             )
           ],
@@ -58,17 +62,52 @@ class DrawerItem extends StatelessWidget {
             ListTile(
               title: Text('Create Category'),
               onTap: () {
-
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AddCategoryDialog(),
+                fullscreenDialog: true),
+                );
               },
             ),
             ListTile(
               title: Text('List Category'),
               onTap: () {
-
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CategoryScreen()),
+                );
               },
             )
           ],
         ),
+        ExpansionTile(
+          title: Text(subCategoryHeading),
+          children: <Widget>[
+            ListTile(
+              title: Text('Create Sub Category'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AddSubCategoryDialog(),
+                    fullscreenDialog: true),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Sub Cat List'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SubCategoryScreen(catName: 'fuel' )),
+                );
+              },
+            )
+          ],
+        )
       ],
     );
   }

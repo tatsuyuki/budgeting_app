@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
 
-import 'package:budgetting_app/database/DBHelper.dart';
-import 'package:budgetting_app/model/AccountData.dart';
+import 'package:budgeting_app/database/DBHelper.dart';
+import 'package:budgeting_app/model/AccountData.dart';
 
 
 
@@ -24,25 +24,28 @@ class AddAccountDialogState extends State<AddAccountDialog> {
   TextEditingController _acTypeController;
   String _acName;
   double _acType;
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return new Scaffold(
+      key: _scaffoldKey,
       appBar: new AppBar(
         title: const Text('New Account'),
         actions: <Widget>[
           new FlatButton(
-              onPressed: () {
-                Navigator
-                    .of(context)
-                    .pop(_save());
-              },
-              child: new Text('SAVE',
-                style: Theme.of(context)
-                            .textTheme
-                            .subhead
-                            .copyWith(color: Colors.white))),
+            onPressed: () {
+            save();
+            _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('Account Created')));
+            _acNameController.clear();
+            _acTypeController.clear();
+            },
+            child: new Text('SAVE',
+            style: Theme.of(context)
+                        .textTheme
+                        .subhead
+                        .copyWith(color: Colors.white)))
         ],
       ),
       body: new Column(
@@ -79,9 +82,11 @@ class AddAccountDialogState extends State<AddAccountDialog> {
     _acTypeController = new TextEditingController();
   }
 
-  void _save() {
+  void save() {
     var account = AccountData(_acName, _acType);
     var dbHelper = DBHelper();
     dbHelper.saveAccount(account);
   }
+
 }
+

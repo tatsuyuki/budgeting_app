@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:budgetting_app/database/DBHelper.dart';
-import 'package:budgetting_app/model/models.dart';
+import 'package:budgeting_app/database/DBHelper.dart';
+import 'package:budgeting_app/model/models.dart';
 
 
 class FutureAccountGridBuild extends StatelessWidget {

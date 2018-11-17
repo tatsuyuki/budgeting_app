@@ -5,3 +5,16 @@ class CategoryData {
     this.name = name;
   }
 }
+
+
+class SubCategoryData {
+  String catName;
+  String name;
+
+  SubCategoryData(String catName, String name) {
+    this.catName = catName;
+    this.name = name;
+  }
+}
+
+

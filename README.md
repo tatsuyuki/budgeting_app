@@ -1,6 +1,6 @@
-# budgetting_app
+# budgeting_app
 
-Bugetting App
+Budgeting App
 
 ## Getting Started
 

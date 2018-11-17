@@ -1,4 +1,4 @@
-import 'package:budgetting_app/database/DBHelper.dart';
+import 'package:budgeting_app/database/DBHelper.dart';
 
 import 'package:flutter/material.dart';
 
@@ -11,10 +11,10 @@ class FutureTotalBalance extends StatelessWidget {
         future: fetchAccountBalanceSum(),
         builder: (context, snapshot) {
           if(snapshot.hasData) {
-            return new Text('Total Bal: ${snapshot.data}',
+            return new Text('${snapshot.data}',
                 textScaleFactor: 3.0);
           } else {
-            return new Text('Total Bal: 0',
+            return new Text('0',
                 textScaleFactor: 3.0);
           }
         });
